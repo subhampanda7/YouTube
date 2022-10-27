@@ -1,0 +1,52 @@
+#navbar {
+  /* border: 1px solid red; */
+  display: grid;
+  grid-template-columns: repeat(5, 10%80%5%5%);
+  margin-bottom: 30px;
+}
+#navbar > div {
+  /* border: 1px solid blue; */
+  margin: auto;
+}
+
+#search {
+  width: 10%;
+  border: 0.5px solid gray;
+  border-left: none;
+}
+input {
+  font-size: 20px;
+  padding: 10px 0px;
+  padding-right: 270px;
+}
+#sea {
+  display: flex;
+  justify-content: center;
+}
+#query {
+  border: 0.5px solid gray;
+  border-right: none;
+}
+#container {
+  margin-top: 20px;
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 30px 10px;
+  text-align: left;
+}
+#videoname {
+  font-family: "Roboto", "Arial", sans-serif;
+}
+#channelname {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 13px;
+  margin-top: -10px;
+}
+#filtering {
+  font-size: 20px;
+  border: none;
+  margin-bottom: 30px;
+}

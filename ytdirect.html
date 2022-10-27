@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube Path</title>
+    <link rel="stylesheet" href="./ytdirect.css" />
+  </head>
+  <body>
+    <div id="navbar">
+      <div>
+        <a href="./index.html">
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/003/206/623/original/youtube-editorial-app-icon-free-vector.jpg"
+            width="100%"
+            alt=""
+          />
+        </a>
+      </div>
+      <div id="sea">
+        <input type="text" placeholder="Search" id="query" />
+        <button onclick="allData()" id="search">
+          <img
+            width="40%"
+            src="https://www.freepnglogos.com/uploads/search-png/search-icon-transparent-images-vector-16.png"
+            alt=""
+          />
+        </button>
+      </div>
+      <div id="notifiaction">
+        <img
+          src="http://cdn.onlinewebfonts.com/svg/img_489991.png"
+          width="40%"
+          alt=""
+        />
+      </div>
+      <div id="user">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR81iX4Mo49Z3oCPSx-GtgiMAkdDop2uVmVvw&usqp=CAU"
+          width="45%"
+          alt=""
+        />
+      </div>
+    </div>
+    <div id="mainpathcontainer">
+      <div id="pathcontainer"></div>
+    </div>
+    <button id="subscibe">Subscribe</button>
+  </body>
+</html>
+<script>
+  let mainObj = JSON.parse(localStorage.getItem("video")) || {};
+
+  function displayTable(mainObj) {
+    let div = document.createElement("div");
+
+    let name = document.createElement("p");
+    name.innerText = mainObj.name;
+    name.setAttribute("id", "videoname");
+
+    let cname = document.createElement("p");
+    cname.innerText = mainObj.cname;
+    cname.setAttribute("id", "channelname");
+
+    let iframe = document.createElement("iframe");
+    iframe.setAttribute("id", "alliframe");
+    let videoId = mainObj.id;
+    iframe.src = `https://www.youtube.com/embed/${videoId}`;
+    iframe.allow = "fullscreen";
+
+    document.getElementById("pathcontainer").append(div);
+    div.append(iframe, name, cname);
+  }
+  displayTable(mainObj);
+</script>
